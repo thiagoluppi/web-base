@@ -32,10 +32,10 @@
           <th>Nota</th>
         </thead>
         <tbody>
-          <tr>
-            <td>Thiago Luppi</td>
-            <td>thiago.luppi@icloud.com</td>
-            <td>10.00</td>
+          <tr v-for="aluno in alunos">
+            <td>{{aluno.nome}}</td>
+            <td>{{aluno.email}}</td>
+            <td>{{aluno.nota}}</td>
           </tr>
           <tr>
             <td>Dhebora Luppi</td>
@@ -49,7 +49,14 @@
 
   <script>
     var app = new Vue({
-      el: "#app"
+      el: "#app",
+      data: {
+        alunos: [
+          { nome: 'Thiago Luppi', email: 'thiago.luppi@icloud.com', nota: 10 },
+          { nome: 'Dhebora Luppi', email: 'Dhebora.luppi@icloud.com', nota: 10 },
+          { nome: 'Amora', email: 'amora@icloud.com', nota: 10 }
+        ]
+      }
     })
   </script>
 </body>
