@@ -13,16 +13,20 @@
 
     <form>
       <label for="nomeCompleto">Nome Completo</label>
-      <input name="nomeCompleto" type="text">
+      <input name="nomeCompleto" type="text" v-model="form.nome">
 
       <label for="Email">Email</label>
-      <input name="Email" type="text">
+      <input name="Email" type="text" v-model="form.email">
 
       <label for="Nota">Nota</label>
-      <input name="Nota" type="text">
+      <input name="Nota" type="text" v-model="form.nota">
 
       <input name="button" type="button" value="Cadastrar">
     </form>
+
+    <span>
+      {{form.nome}} - {{form.email}} - {{form.nota}}
+    </span>
 
     <div>
       <table class="table">
@@ -51,6 +55,11 @@
     var app = new Vue({
       el: "#app",
       data: {
+        form: {
+          nome: '',
+          email: '',
+          nota: ''
+        },
         alunos: [
           { nome: 'Thiago Luppi', email: 'thiago.luppi@icloud.com', nota: 10 },
           { nome: 'Dhebora Luppi', email: 'Dhebora.luppi@icloud.com', nota: 10 },
